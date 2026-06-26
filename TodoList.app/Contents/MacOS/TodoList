@@ -1,0 +1,4 @@
+#!/bin/bash
+cd "$(dirname "$0")/../../.."
+export ELECTRON_IS_DEV=1
+exec "./node_modules/.pnpm/electron@33.4.11/node_modules/electron/dist/Electron.app/Contents/MacOS/Electron" "." --disable-gpu
