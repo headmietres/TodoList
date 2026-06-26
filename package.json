@@ -1,0 +1,18 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "\u684c\u9762\u7aef\u5f85\u529e\u8bb0\u5f55\u5c0f\u5de5\u5177 - \u57fa\u4e8ePDCA\u5faa\u73af\u6a21\u578b",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron ."
+  },
+  "keywords": [
+    "todo",
+    "pda",
+    "electron"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

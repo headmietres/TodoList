@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
+  <title>TodoList</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="header-left">
+        <span class="text-sm text-muted" id="level-display"></span>
+      </div>
+      <div class="header-center">
+        <button class="btn-icon" id="prev-month" title="上一月">&#9664;</button>
+        <span id="month-title" class="font-bold" style="min-width:120px;text-align:center;font-size:13px">2026年 六月</span>
+        <button class="btn-icon" id="next-month" title="下一月">&#9654;</button>
+        <button class="btn btn-sm" id="today-btn">今天</button>
+      </div>
+      <div class="header-right">
+        <button class="btn-icon" id="show-stats-btn" title="统计">Stats</button>
+        <button class="btn-icon" id="settings-btn" title="设置">Sets</button>
+        <button class="btn-icon" id="mini-mode-btn" title="迷你模式">&#8862;</button>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <div class="calendar-panel">
+        <div class="calendar-weekdays" id="calendar-weekdays"></div>
+        <div class="calendar-grid" id="calendar-grid"></div>
+      </div>
+
+      <div class="task-panel">
+        <div class="task-header">
+          <div>
+            <h2 id="selected-date-title">2026-06-26 星期五</h2>
+            <span class="subtitle" id="task-count">0 项任务</span>
+          </div>
+        </div>
+
+        <div class="task-input-area">
+          <div style="display:flex;gap:6px;align-items:center">
+            <input type="text" class="task-input" id="task-input" placeholder="添加任务…" style="flex:1;min-width:100px">
+            <select class="task-input" id="task-priority" style="width:auto;min-width:60px;font-size:12px;padding:7px 22px 7px 8px">
+              <option value="medium">中</option>
+              <option value="high">高</option>
+              <option value="low">低</option>
+            </select>
+            <select class="task-input" id="task-tag" style="width:auto;min-width:50px;max-width:100px;font-size:12px;padding:7px 22px 7px 8px">
+              <option value="">标签</option>
+            </select>
+            <button class="btn btn-primary" id="add-task-btn" style="white-space:nowrap">+ 添加</button>
+            <button class="btn-icon" id="task-expand-btn" title="更多选项" style="font-size:14px">&hellip;</button>
+          </div>
+          <div id="task-extras" class="hidden" style="display:flex;gap:8px;align-items:center;padding:6px 0 0 0">
+            <span style="font-size:12px;color:var(--fg-muted)">截止</span>
+            <input type="date" class="task-input" id="task-due" style="font-size:12px;padding:5px 8px;width:auto">
+          </div>
+        </div>
+
+        <div class="task-list" id="task-list">
+          <div class="empty-state">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 5v14M5 12h14" stroke-linecap="round"/>
+            </svg>
+            <p>还没有任务</p>
+          </div>
+        </div>
+
+        <div class="bottom-bar">
+          <span class="task-count" id="bottom-count">已完成 0 / 共 0 项</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
